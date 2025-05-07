@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-// context7: Database adapter pattern for multi-DB support
+// Database adapter pattern for multi-DB support
 const dbType = process.env.DB_TYPE || 'mariadb';
 let adapter;
 
