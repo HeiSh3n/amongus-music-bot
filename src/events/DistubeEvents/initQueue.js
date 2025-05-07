@@ -35,8 +35,6 @@ export default {
           console.warn(`Failed to set text channel for queue ${queue.id}`);
         }
       }
-      // Log queue initialization
-      console.log(`Queue initialized for guild ${queue.id}`);
     } catch (error) {
       console.error('Error in initQueue event handler:', error);
     }
