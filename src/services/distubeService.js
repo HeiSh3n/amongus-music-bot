@@ -15,7 +15,7 @@ try {
   }
   if (fs.existsSync(cookiePath)) {
     const cookiesData = JSON.parse(fs.readFileSync(cookiePath, 'utf8'));
-    // context7: Accept either a string or an array of cookie objects
+    // Accept either a string or an array of cookie objects
     if (typeof cookiesData === 'string') {
       youtubeCookie = cookiesData;
     } else if (Array.isArray(cookiesData)) {
