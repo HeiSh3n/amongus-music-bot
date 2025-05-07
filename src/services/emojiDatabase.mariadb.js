@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import mariadb from 'mariadb';
 
-// context7: MariaDB adapter for emoji management
+// MariaDB adapter for emoji management
 const pool = mariadb.createPool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT || 3306,
