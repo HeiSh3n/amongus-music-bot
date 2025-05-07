@@ -20,15 +20,15 @@ export default {
         .setDescription('__Now Playing:__\nNothing Playing!')
         .setColor('Red');
       return isSlashCommand
-        ? await interactionOrMessage.reply({ embeds: [embed], ephemeral: true })
+        ? await interactionOrMessage.reply({ embeds: [embed] })
         : await channel.send({ embeds: [embed] });
     }
     const pages = generateQueueEmbeds(queue, guild);
     let currentPage = 0;
     const message = await (isSlashCommand
-      ? interactionOrMessage.reply({ embeds: [pages[currentPage]], fetchReply: true, ephemeral: true })
+      ? interactionOrMessage.reply({ embeds: [pages[currentPage]], fetchReply: true })
       : channel.send({ embeds: [pages[currentPage]] }));
-    if (pages.length > 1 && !isSlashCommand) {
+    if (pages.length > 1) {
       await message.react('⏪');
       await message.react('⏩');
       const filter = (reaction, user) => ['⏪', '⏩'].includes(reaction.emoji.name) && !user.bot;
