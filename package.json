@@ -1,0 +1,34 @@
+{
+  "name": "discord-music-bot",
+  "version": "1.0.0",
+  "description": "A Discord music bot using discord.js and distube.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "discord",
+    "music",
+    "bot",
+    "distube"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.18.0",
+    "@distube/soundcloud": "^2.0.4",
+    "@distube/spotify": "^2.0.2",
+    "@distube/youtube": "^1.0.4",
+    "@distube/yt-dlp": "^2.0.1",
+    "discord.js": "^14.14.1",
+    "distube": "^5.0.7",
+    "dotenv": "^16.4.5",
+    "mariadb": "^3.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

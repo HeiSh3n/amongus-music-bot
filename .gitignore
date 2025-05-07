@@ -1,0 +1,19 @@
+# Node dependencies
+node_modules/
+
+# Editor/IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# context7: Sensitive and local config files
+cookies.json
+src/config/cookies.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+Thumbs.db 
