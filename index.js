@@ -1,4 +1,3 @@
-// Main entry point for the Discord music bot.
 import 'dotenv/config';
 import { Client, Collection, GatewayIntentBits, REST, Routes } from 'discord.js';
 import { loadCommands, loadEvents } from './src/utils/loader.js';
