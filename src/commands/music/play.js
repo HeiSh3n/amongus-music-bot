@@ -15,12 +15,12 @@ export default {
   aliases: ['p'],
   description: 'Play a song from a URL or search query!',
   async execute(interactionOrMessage, client, args) {
-    // context7: Use the same detection as other commands
+    // Use the same detection as other commands
     const isSlashCommand = interactionOrMessage.isCommand && typeof interactionOrMessage.isCommand === 'function' && interactionOrMessage.isCommand();
     const guild = interactionOrMessage.guild;
     const member = interactionOrMessage.member;
     const channel = interactionOrMessage.channel;
-    // context7: Get the song query from the correct source
+    // Get the song query from the correct source
     const music = isSlashCommand
       ? interactionOrMessage.options.getString('song')
       : (Array.isArray(args) ? args.join(' ') : '');
