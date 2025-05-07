@@ -2,10 +2,10 @@ import { DisTube } from 'distube';
 import { SpotifyPlugin } from '@distube/spotify';
 import { SoundCloudPlugin } from '@distube/soundcloud';
 import { YtDlpPlugin } from '@distube/yt-dlp';
+import { YouTubePlugin } from '@distube/youtube';
 import fs from 'fs';
 import path from 'path';
 
-// context7: Load YouTube cookies from cookies.json for YtDlpPlugin
 let youtubeCookie = '';
 try {
   // Try project root, then config directory
@@ -26,16 +26,16 @@ try {
     }
   }
 } catch (err) {
-  console.warn('context7: Could not load YouTube cookies from cookies.json:', err.message);
+  console.warn('Could not load YouTube cookies from cookies.json:', err.message);
 }
 
 export function createDisTube(client) {
   return new DisTube(client, {
     emitNewSongOnly: true,
     plugins: [
+      new YouTubePlugin(),
       new SpotifyPlugin(),
       new SoundCloudPlugin(),
-      // context7: Pass cookies to YtDlpPlugin
       new YtDlpPlugin(
         youtubeCookie
           ? { cookies: youtubeCookie }
