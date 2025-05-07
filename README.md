@@ -18,7 +18,7 @@ A modern Discord music bot built with Node.js, DisTube.js, and MariaDB. Supports
 
 ### 1. Clone the repository
 ```sh
-git clone https://github.com/B1ackGX/amongus-music-bot.git
+git clone https://github.com/HeiSh3n/amongus-music-bot.git
 cd amongus-music-bot
 ```
 
