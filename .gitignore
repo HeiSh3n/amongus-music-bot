@@ -6,7 +6,7 @@ node_modules/
 .idea/
 .DS_Store
 
-# context7: Sensitive and local config files
+# Sensitive and local config files
 cookies.json
 src/config/cookies.json
 
