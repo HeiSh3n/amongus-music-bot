@@ -1,6 +1,6 @@
 {
   "name": "discord-music-bot",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A Discord music bot using discord.js and distube.js",
   "main": "index.js",
   "type": "module",
