@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-// context7: Database adapter pattern for multi-DB support
+// Database adapter pattern for multi-DB support
 const dbType = process.env.DB_TYPE || 'mariadb';
 let adapter;
 
@@ -15,7 +15,7 @@ switch (dbType) {
   //   adapter = await import('./prefixDatabase.mongo.js');
   //   break;
   default:
-    throw new Error(`context7: Unsupported DB_TYPE '${dbType}'. Please provide a compatible adapter in src/services/prefixDatabase.${dbType}.js`);
+    throw new Error(`Unsupported DB_TYPE '${dbType}'. Please provide a compatible adapter in src/services/prefixDatabase.${dbType}.js`);
 }
 
 export const getPrefix = adapter.getPrefix;

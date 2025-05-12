@@ -30,5 +30,10 @@ export default {
     } catch (error) {
       console.error('Error in addSong event handler:', error);
     }
+    // Clear inactivity timeout if it exists
+    if (queue._leaveTimeout) {
+      clearTimeout(queue._leaveTimeout);
+      queue._leaveTimeout = null;
+    }
   },
 }; 

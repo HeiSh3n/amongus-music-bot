@@ -10,12 +10,13 @@ export default {
   once: true,
   async execute(client) {
     const distube = client.distube;
-    const eventsPath = path.join(__dirname, 'DistubeEvents');
+    const eventsPath = path.join(__dirname, '../DistubeEvents');
     const files = await readdir(eventsPath);
     for (const file of files) {
       if (file.endsWith('.js')) {
         const eventModule = (await import(pathToFileURL(path.join(eventsPath, file)).href)).default;
         if (eventModule && eventModule.event && typeof eventModule.handler === 'function') {
+          distube.removeAllListeners(eventModule.event);
           distube.on(eventModule.event, eventModule.handler);
         }
       }

@@ -1,15 +1,4 @@
-import 'dotenv/config';
-import mariadb from 'mariadb';
-
-// context7: MariaDB adapter for prefix management
-const pool = mariadb.createPool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT || 3306,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-  connectionLimit: 5,
-});
+import pool from './mariadbPool.js';
 
 // Ensure the guild_prefixes table exists on module load
 async function ensurePrefixTable() {

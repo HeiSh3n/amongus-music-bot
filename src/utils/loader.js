@@ -1,8 +1,3 @@
-/**
- * Utility for dynamically loading commands and events.
- * - Recursively loads all command files and registers them (including aliases).
- * - Loads all event handlers and attaches them to the client.
- */
 import { readdir, stat } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';

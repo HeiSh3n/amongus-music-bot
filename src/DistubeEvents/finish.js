@@ -4,7 +4,7 @@ export default {
   event: 'finish',
   once: false,
   handler(queue, client) {
-        // Set a 10-minute timer to leave if no new songs are added
+    // Set a 10-minute timer to leave if no new songs are added
     const inactivityTimeout = setTimeout(async () => {
       try {
         if (!queue.voice || queue.voice.isDisconnected) return;
@@ -28,21 +28,5 @@ export default {
 
     // Store the timeout in the queue object so it can be cleared if needed
     queue._leaveTimeout = inactivityTimeout;
-
-    // Handler to clear the timeout if a new song is added
-    const clearTimeoutHandler = () => {
-      if (queue._leaveTimeout) {
-        clearTimeout(queue._leaveTimeout);
-        queue._leaveTimeout = null;
-      }
-    };
-    queue.distube.on('addSong', clearTimeoutHandler);
-    queue._clearTimeoutHandler = clearTimeoutHandler;
-    setTimeout(() => {
-      if (queue._clearTimeoutHandler) {
-        queue.distube.removeListener('addSong', queue._clearTimeoutHandler);
-        queue._clearTimeoutHandler = null;
-      }
-    }, 10 * 60 * 1000 + 1000); // 10 minutes + 1 second
   }
 }; 

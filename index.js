@@ -1,9 +1,8 @@
-// Main entry point for the Discord music bot.
 import 'dotenv/config';
 import { Client, Collection, GatewayIntentBits, REST, Routes } from 'discord.js';
 import { loadCommands, loadEvents } from './src/utils/loader.js';
 import { createDisTube } from './src/services/distubeService.js';
-import distubeEvents from './src/events/distubeEvents.js';
+import distubeEvents from './src/DistubeEvents/distubeEvents.js';
 import { readdir, stat } from 'fs/promises';
 import path from 'path';
 import { pathToFileURL } from 'url';
