@@ -85,6 +85,19 @@ This update improves configuration management by providing a sensible default fo
 ### Description
 This change ensures MariaDB is used by default if no database type is specified, making setup easier for new users. Centralizing configuration in the config layer improves maintainability and aligns with discord.js best practices.
 
+## [v1.3.2] - 2025-05-12
+
+### Summary
+This update improves project structure and modularity by relocating DisTube service logic and cleaning up obsolete folders.
+
+### Changed
+- Moved `distubeService.js` from `src/services/` to `src/DistubeEvents/` for better modularity and clarity.
+- Updated all imports to reference the new location of `distubeService.js`.
+- Removed the now-empty `src/services/` folder.
+
+### Description
+This change keeps the codebase clean and organized, ensuring all DisTube-related logic is grouped together and obsolete folders are removed. This aligns with discord.js best practices for maintainable, modular project structure.
+
 ---
 
 See previous releases for earlier changes. 

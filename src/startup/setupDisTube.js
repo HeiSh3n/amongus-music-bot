@@ -1,4 +1,4 @@
-import { createDisTube } from '../services/distubeService.js';
+import { createDisTube } from '../DistubeEvents/distubeService.js';
 import distubeEvents from '../DistubeEvents/distubeEvents.js';
  
 export default async function setupDisTube(client) {
