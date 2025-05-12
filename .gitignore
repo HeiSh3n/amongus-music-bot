@@ -9,6 +9,7 @@ node_modules/
 # Sensitive and local config files
 cookies.json
 src/config/cookies.json
+.env
 
 # Logs
 logs/
