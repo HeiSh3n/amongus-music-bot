@@ -34,7 +34,7 @@ Create a `.env` file in the project root with the following variables:
 ```env
 DISCORD_TOKEN=your_discord_bot_token
 CLIENT_ID=your_discord_client_id
-DB_TYPE=mariadb # (mariadb, mysql, postgres, mongo, sqlite)
+DB_TYPE=mariadb # (default mariadb, see Database Support below)
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=your_db_user
