@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import path from 'path';
-import { areEmojisAdded, setEmojisAdded } from '../services/emojiDatabase.js';
+import { areEmojisAdded, setEmojisAdded } from '../database/adapter.js';
 import { PermissionsBitField } from 'discord.js';
 import { logger } from '../utils/logger.js';
 

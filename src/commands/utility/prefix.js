@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, PermissionFlagsBits } from 'discord.js';
-import { setPrefix, getPrefix } from '../../services/prefixDatabase.js';
+import { setPrefix, getPrefix } from '../../database/adapter.js';
 
 export default {
   data: new SlashCommandBuilder()

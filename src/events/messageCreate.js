@@ -1,4 +1,4 @@
-import { getPrefix } from '../services/prefixDatabase.js';
+import { getPrefix } from '../database/adapter.js';
 
 export default {
   name: 'messageCreate',

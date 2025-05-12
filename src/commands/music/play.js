@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, EmbedBuilder, ChannelType } from 'discord.js';
-import { areEmojisAdded } from '../../services/emojiDatabase.js';
+import { areEmojisAdded } from '../../database/adapter.js';
 
 export default {
   data: new SlashCommandBuilder()

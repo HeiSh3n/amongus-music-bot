@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import path from 'path';
-import { setEmojisAdded } from '../services/emojiDatabase.js';
+import { setEmojisAdded } from '../database/adapter.js';
 
 export default {
   name: 'guildCreate',
