@@ -24,17 +24,29 @@ export default async function registerSlashCommands(client) {
   }
   await loadCommandsForRegister(commandsPath);
   const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
-  if (process.env.GUILD_ID) {
-    logger.info(`Registering ${commands.length} commands for guild ${process.env.GUILD_ID}...`);
+
+  const guildId = process.env.GUILD_ID;
+  const clientId = process.env.CLIENT_ID;
+
+  if (guildId) {
+    // Check if the bot is in the guild
+    const guild = client.guilds.cache.get(guildId);
+    if (!guild) {
+      logger.warn(
+        `GUILD_ID ${guildId} is set, but the bot is not a member of that guild. Skipping guild command registration.`
+      );
+      return;
+    }
+    logger.info(`Registering ${commands.length} commands for guild ${guildId}...`);
     await rest.put(
-      Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+      Routes.applicationGuildCommands(clientId, guildId),
       { body: commands }
     );
     logger.info('Successfully registered application (/) commands for guild.');
   } else {
     logger.info(`Registering ${commands.length} commands globally...`);
     await rest.put(
-      Routes.applicationCommands(process.env.CLIENT_ID),
+      Routes.applicationCommands(clientId),
       { body: commands }
     );
     logger.info('Successfully registered application (/) commands globally.');
