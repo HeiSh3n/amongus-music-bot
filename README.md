@@ -45,7 +45,6 @@ GUILD_ID=your_guild_id # (optional, for testing slash commands)
 
 ### 4. Create a `cookies.json` file
 - Place it in the project root or in `src/config/cookies.json`.
-- **Do NOT commit this file.**
 
 #### How to get YouTube cookies
 1. Install the [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg) extension for your browser.
