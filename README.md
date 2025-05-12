@@ -34,7 +34,7 @@ Create a `.env` file in the project root with the following variables:
 ```env
 DISCORD_TOKEN=your_discord_bot_token
 CLIENT_ID=your_discord_client_id
-DB_TYPE=mariadb # (mariadb, mysql, postgres, mongo, sqlite)
+DB_TYPE=mariadb # (default mariadb, see Database Support below)
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=your_db_user
@@ -45,7 +45,7 @@ GUILD_ID=your_guild_id # (optional, for testing slash commands)
 
 ### 4. Create a `cookies.json` file
 - Place it in the project root or in `src/config/cookies.json`.
-- **Do NOT commit this file.**
+
 
 #### How to get YouTube cookies
 1. Install the [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg) extension for your browser.

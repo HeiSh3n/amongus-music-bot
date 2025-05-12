@@ -1,5 +1,6 @@
+import config from '../config/config.js';
 let prefixAdapter, emojiAdapter;
-switch (process.env.DB_TYPE) {
+switch (config.dbType) {
   case 'postgres':
     prefixAdapter = await import('./postgres/prefix.js');
     emojiAdapter = await import('./postgres/emoji.js');
