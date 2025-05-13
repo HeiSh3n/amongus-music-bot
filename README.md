@@ -100,8 +100,6 @@ No code changes are required—just update your `.env` and ensure the backend is
 3. Update the switch in `adapter.js` to support your new backend.
 
 ## Contributing
-- Follow the project coding standards.
-- Do not commit `.env`, `cookies.json`, or any sensitive files.
 - Open issues or pull requests for improvements.
 
 ## License
