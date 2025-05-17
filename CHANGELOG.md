@@ -98,6 +98,23 @@ This update improves project structure and modularity by relocating DisTube serv
 ### Description
 This change keeps the codebase clean and organized, ensuring all DisTube-related logic is grouped together and obsolete folders are removed. This aligns with discord.js best practices for maintainable, modular project structure.
 
+## [v1.4.0] - 2024-05-16
+
+### Database Connection Improvements
+- **MariaDB:**
+  - Added `connectTimeout` (5s) and `acquireTimeout` (10s) to the connection pool.
+  - Ensured `port` is parsed as a number.
+- **MySQL:**
+  - Added `connectTimeout` (5s) and `acquireTimeout` (10s) to the connection pool.
+  - Ensured `port` is parsed as a number.
+- **Postgres:**
+  - Added `connectionTimeoutMillis` (5s) and `idleTimeoutMillis` (10s) to the connection pool.
+  - Ensured `port` is parsed as a number.
+- **MongoDB:**
+  - Added `connectTimeoutMS` (5s), `socketTimeoutMS` (10s), and `serverSelectionTimeoutMS` (10s) to the MongoDB client.
+- **Music Command:**
+  - Added backward compatibility for both `query` and `song` option names in the `/play` slash command to prevent user errors during migration.
+
 ---
 
 See previous releases for earlier changes. 

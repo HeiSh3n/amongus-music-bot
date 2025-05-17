@@ -22,7 +22,7 @@ export default {
     const channel = interactionOrMessage.channel;
     // Get the song query from the correct source
     const music = isSlashCommand
-      ? interactionOrMessage.options.getString('query')
+      ? (interactionOrMessage.options.getString('query') || interactionOrMessage.options.getString('song'))
       : (Array.isArray(args) ? args.join(' ') : '');
     try {
       if (!guild) {
