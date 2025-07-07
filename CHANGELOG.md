@@ -120,8 +120,4 @@ This change keeps the codebase clean and organized, ensuring all DisTube-related
 ## [v1.4.1] - 2025-07-07
 
 ### Changed
-- Removed the now-redundant `src/DistubeEvents/empty.js` DisTube event handler. Auto-leave on empty channel is now handled by the recommended `voiceStateUpdate` event logic and improved `finish.js` handler, ensuring robust and consistent disconnect behavior after 5 minutes of inactivity or when the bot is alone in a voice channel.
-
----
-
-See previous releases for earlier changes. 
+- Auto-leave on empty channel is now handled by the recommended `voiceStateUpdate` event logic and improved `finish.js` handler, ensuring robust and consistent disconnect behavior after 5 minutes of inactivity or when the bot is alone in a voice channel.
