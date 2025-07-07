@@ -42,6 +42,7 @@ async function loadEvents(client) {
       // Dynamically import and register each event handler
       const event = (await import(pathToFileURL(path.join(eventsPath, file)).href)).default;
       if (event && event.name && event.execute) {
+        client.removeAllListeners(event.name);
         if (event.once) {
           client.once(event.name, (...args) => event.execute(...args, client));
         } else {

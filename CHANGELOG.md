@@ -114,6 +114,13 @@ This change keeps the codebase clean and organized, ensuring all DisTube-related
   - Added `connectTimeoutMS` (5s), `socketTimeoutMS` (10s), and `serverSelectionTimeoutMS` (10s) to the MongoDB client.
 - **Music Command:**
   - Added backward compatibility for both `query` and `song` option names in the `/play` slash command to prevent user errors during migration.
+- **Event Loader:**
+  - The event loader now removes all old listeners for each event before registering new ones, preventing AsyncEventEmitter memory leak warnings and ensuring robust, reload-safe event handling.
+
+## [v1.4.1] - 2025-07-07
+
+### Changed
+- Removed the now-redundant `src/DistubeEvents/empty.js` DisTube event handler. Auto-leave on empty channel is now handled by the recommended `voiceStateUpdate` event logic and improved `finish.js` handler, ensuring robust and consistent disconnect behavior after 5 minutes of inactivity or when the bot is alone in a voice channel.
 
 ---
 

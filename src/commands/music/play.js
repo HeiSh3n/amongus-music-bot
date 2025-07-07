@@ -57,6 +57,13 @@ export default {
           ? await interactionOrMessage.reply({ embeds: [embed], flags: 1 << 6 })
           : await channel.send({ embeds: [embed] });
       }
+      // Defensive: Check if distube is initialized
+      if (!client.distube) {
+        const msg = '❌ **Music system is not initialized. Please try again later.**';
+        return isSlashCommand
+          ? await interactionOrMessage.reply({ content: msg, ephemeral: true })
+          : await channel.send(msg);
+      }
       // Fetch custom emojis from the guild, fallback to default if not present
       const spotifyEmoji = guild.emojis.cache.find(e => e.name === 'Spotify') || '🎵';
       const youtubeEmoji = guild.emojis.cache.find(e => e.name === 'YouTube') || '🎵';
@@ -95,9 +102,15 @@ export default {
       if (e?.errorCode === 'CANNOT_RESOLVE_SONG' || e?.message?.includes('Cannot resolve')) {
         msg = '❌ **Could not find a song for your query. Please try a more specific name or a direct URL.**';
       }
-      return isSlashCommand
-        ? await interactionOrMessage.reply({ content: msg, flags: 1 << 6 })
-        : await channel.send(msg);
+      if (isSlashCommand) {
+        if (interactionOrMessage.replied || interactionOrMessage.deferred) {
+          await interactionOrMessage.followUp({ content: msg, ephemeral: true });
+        } else {
+          await interactionOrMessage.reply({ content: msg, ephemeral: true });
+        }
+      } else {
+        await channel.send(msg);
+      }
     }
   }
 }; 
